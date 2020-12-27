@@ -20,7 +20,7 @@ jobs:
     - name: test via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ./scripts/test.sh
+        command: ./dbscripts/test.sh
         host: "198.54.114.130"
         username: "dkedxcwy"
         port: 21098
