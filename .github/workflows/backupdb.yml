@@ -26,7 +26,3 @@ jobs:
         port: 21098
         privateKey: ${{ secrets.PRIVATE_KEY}}
 
-    - name: run backupdb
-      run: |
-      pwd
-      echo "start backupdb.sh"
