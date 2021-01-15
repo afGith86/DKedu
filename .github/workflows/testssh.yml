@@ -21,8 +21,14 @@ jobs:
     - name: ls -a via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ls -a /tmp
         host: "198.54.114.130"
         username: "dkedxcwy"
         port: 21098
         privateKey: ${{ secrets.PRIVATE_KEY}}
+
+    - name: test env variable
+      env: 
+        db_name: "dkedxcwy_testing" 
+      run: |
+        echo "db_name=$db_name"
+        ls -ltr /tmp/backup/$db_name*.sql
