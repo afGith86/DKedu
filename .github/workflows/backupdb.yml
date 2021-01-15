@@ -20,9 +20,9 @@ jobs:
     - name: backup DB via ssh
       uses: garygrossgarten/github-action-ssh@release
       env:
-        db_name: ${{ secrets.TEST_DB_NAME }}
-        db_user: ${{ secrets.DB_USER }}
-        db_password: ${{ secrets.DB_PASSWORD }}
+        db_name: '${{ secrets.TEST_DB_NAME }}'
+        db_user: '${{ secrets.DB_USER }}'
+        db_password: '${{ secrets.DB_PASSWORD }}'
       with:
         command: ./dbscripts/backupdb.sh $db_name
         host: ${{ secrets.REMOTE_HOST }}
