@@ -21,13 +21,15 @@ jobs:
     - name: test ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: echo ${{secrets.TEST_DB_NAME}}
+        command: ./dbscripts/backupdb.sh ${{secrets.TEST_DB_NAME}}
         host: "198.54.114.130"
         username: "dkedxcwy"
         port: 21098
         privateKey: ${{ secrets.PRIVATE_KEY}}
     
     - name: test env variable
-      run: echo "DB_NAME=$db_name"
       env: 
         db_name: "dkedxcwy_testing"
+      run: |
+        echo "backup $db_name database"
+        echo "backup finished"
