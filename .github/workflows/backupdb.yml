@@ -21,8 +21,8 @@ jobs:
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: ./dbscripts/backupdb.sh
-        host: "198.54.114.130"
-        username: "dkedxcwy"
-        port: 21098
-        privateKey: ${{ secrets.PRIVATE_KEY}}
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        port: ${{ secrets.REMOTE_PORT }}
+        privateKey: ${{ secrets.PRIVATE_KEY }}
 
