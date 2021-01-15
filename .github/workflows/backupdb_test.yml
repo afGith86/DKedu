@@ -1,6 +1,6 @@
 # This is a basic workflow to test backupdb.sh to testing.dk-education.com
 
-name: Test backupdb 
+name: backup testing DB 
 
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: backup DB via ssh
+    - name: backup testing DB via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: ./dbscripts/backupdb.sh ${{ secrets.TEST_DB_NAME }}
